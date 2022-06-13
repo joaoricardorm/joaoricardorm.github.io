@@ -116,6 +116,15 @@
 			color: white !important;
 			fill: white !important;
 			stroke: white !important;
+			opacity: 30%;
+			transition: all 100ms ease-in-out;
+		}
+
+		.swiper-button-next:hover,
+		.swiper-button-prev:hover,
+		.swiper-button-next:active,
+		.swiper-button-prev:active {
+			opacity: 80%;
 		}
 
 		.swiper-pagination-bullet-active {
@@ -306,6 +315,12 @@
 			direction: 'horizontal',
 			loop: true,
 			mousewheel: true,
+
+			autoplay: {
+				delay: 7000,
+			},
+			pauseOnMouseEnter: true,
+			disableOnInteraction: true,
 
 			// If we need pagination
 			pagination: {
