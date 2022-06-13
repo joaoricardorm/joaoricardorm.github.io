@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Login - Help Desk Software</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		}
+
+		.tela {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.bloco-arte {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: stretch;
+			align-content: stretch;
+		}
+
+		.bloco-conheca,
+		.bloco-rodape {
+			text-align: center;
+		}
+
+		.bloco-logo {
+			display: block;
+			flex-grow: 1;
+			flex-shrink: 0;
+			order: 0;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.owl-carousel {
+
+			box-shadow: 50px 50px 130px rgb(0 0 0 / 30%);
+		}
+
+		.owl-carousel img {
+			border-radius: 10px;
+		}
+
+		.owl-carousel,
+		.owl-carousel img {
+			margin: auto;
+			max-height: 800px;
+			max-width: 800px;
+
+		}
+
+		.bloco-rodape {
+			display: block;
+			flex-grow: 0;
+			flex-shrink: 1;
+			flex-basis: auto;
+			align-self: auto;
+			order: 0;
+		}
+
+		.bloco-login {
+			width: 30%;
+			height: 100vh;
+			background-color: rgb(255, 255, 255);
+			align-items: stretch;
+		}
+
+		.bloco-login .conteudo {
+			padding: 5%;
+		}
+
+		.bloco-login .img-logo {
+			margin: 5%;
+			display: block;
+		}
+
+		.bloco-login .caixa-botoes {
+			margin: 0 auto;
+			display: block;
+			width: fit-content;
+		}
+
+		.bloco-login input {
+			padding: 1em 1.5em;
+			border: 1px solid #ccc;
+			margin: 2% 0;
+			text-align: left;
+			display: inline-flex;
+			width: 80%;
+			border-radius: 9999em;
+		}
+
+		.bloco-login .btn {
+			letter-spacing: 0.2em;
+			text-align: center;
+			font-weight: bold;
+			margin: 5% 0;
+			border-radius: 9999px;
+			padding: 1em 1.5em;
+			width: 100%;
+			display: block;
+			border: none;
+			color: white;
+
+			background: rgb(2, 58, 82);
+			background: -moz-linear-gradient(45deg, rgba(2, 58, 82, 1) 0%, rgba(177, 30, 33, 1) 100%);
+			background: -webkit-linear-gradient(45deg, rgba(2, 58, 82, 1) 0%, rgba(177, 30, 33, 1) 100%);
+			background: linear-gradient(45deg, rgba(2, 58, 82, 1) 0%, rgba(177, 30, 33, 1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#023a52", endColorstr="#b11e21", GradientType=1);
+		}
+
+		.bloco-arte {
+			width: 70%;
+			height: 100vh;
+
+			background: rgb(2, 58, 82);
+			background: -moz-linear-gradient(45deg, rgba(2, 58, 82, 1) 0%, rgba(177, 30, 33, 1) 100%);
+			background: -webkit-linear-gradient(45deg, rgba(2, 58, 82, 1) 0%, rgba(177, 30, 33, 1) 100%);
+			background: linear-gradient(45deg, rgba(2, 58, 82, 1) 0%, rgba(177, 30, 33, 1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#023a52", endColorstr="#b11e21", GradientType=1);
+		}
+
+		.conheca {
+			display: inline-flex;
+			background: white;
+			border-radius: 66% 34% 24% 76% / 55% 60% 40% 45%;
+			padding: 2em 3em;
+			display: inline-flex;
+			margin: 5%;
+			text-align: center;
+		}
+
+		.img-logo {
+			width: 80%;
+			height: auto;
+			max-height: 400px;
+		}
+
+		.fundo-rodape {
+			background: white;
+			display: inline-block;
+			padding: 2em 5em;
+			margin: 5%;
+			border-radius: 1em;
+		}
+
+
+		@media only screen and (max-width: 768px) {
+
+			.tela,
+			.bloco-login,
+			.bloco-arte {
+				flex-direction: column;
+				width: 100%;
+				height: auto;
+			}
+
+			.bloco-login input {
+				width: 90%;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var owl = $('.owl-carousel');
+			owl.owlCarousel({
+				loop: true,
+				nav: true,
+				items: 1,
+				lazyLoad: true,
+				autoHeight: true,
+				autoPlay: true,
+				autoPlayTimeout: 100,
+				autoPlayHoverPause: true
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="tela">
+		<div class="bloco-login">
+			<div class="conteudo">
+
+				<!--CONTEUDO DA PARTE DO LOGIN AQUI-->
+
+				<img src="img/logo-help-desk-soft-colorida.svg" class="img-logo" />
+
+				<form action="#" class="caixa-botoes">
+					<!--Email-->
+
+					<div>
+						<h2 style="display: inline;">✉️&nbsp;</h2>
+						<input type="text" placeholder="E-mail" class="input" />
+
+
+
+
+						<!--Senha-->
+						<h2 style="display: inline;">🔒&nbsp;</h2>
+						<input type="text" placeholder="Senha" class="input" />
+
+
+
+						<input type="submit" value="ENVIAR" class="btn">
+
+						<a href="#">Esqueci minha senha</a>
+					</div>
+				</form>
+				<!--FIM - CONTEUDO DA PARTE DO LOGIN AQUI-->
+
+			</div>
+		</div>
+
+		<div class="bloco-arte">
+
+			<div class="owl-carousel owl-theme bloco-logo">
+				<div> <img src="img/carrossel/1.jpg" /> </div>
+				<div> <img src="img/carrossel/2.jpg" /> </div>
+				<div> <img src="img/carrossel/3.jpg" /> </div>
+			</div>
+
+		</div>
+	</div>
+	</div>
+
+
+</body>
+
+</html>
