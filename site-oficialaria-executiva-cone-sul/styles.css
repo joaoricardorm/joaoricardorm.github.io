@@ -129,11 +129,12 @@ h1 span {
 }
 
 .btn img {
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
     margin-bottom: 8px;
     position: relative;
     z-index: 1;
-    width: 100%;
 }
 
 .btn:hover {
@@ -217,7 +218,9 @@ footer {
     }
 
     .btn img {
-        max-width: 100px;
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
     }
 
     .btn span {
@@ -244,7 +247,9 @@ footer {
     }
 
     .btn img {
-        max-width: 100px;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
     }
 
     .btn span {
