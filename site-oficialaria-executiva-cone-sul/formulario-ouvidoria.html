@@ -30,7 +30,9 @@
 				<span>←</span>
 				<span>VOLTAR</span>
 			</a>
-			<img id="brasao" src="img/brasao-demolay-3d.png" alt="Brasão Demolay" />
+			<a href="index.html" class="logo-link" title="Ir para página inicial">
+				<img id="brasao" src="img/brasao-demolay-3d.png" alt="Brasão Demolay" />
+			</a>
 			<div class="form-title">
 				<h1 style="margin: 10px 0 0 0;">Ouvidoria</h1>
 				<h3>Oficialaria Executiva <span>Cone Sul</span></h3>
@@ -42,9 +44,16 @@
 				protegidos.</p>
 		</div>
 
-		<iframe
-			src="https://docs.google.com/forms/d/e/1FAIpQLSfNv6XA-eTay_9voIBm-RPUNKuS_kk3eu3CNw49sZJ9bfq1gQ/viewform?embedded=true"
-			width="640" height="371" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+		<div class="iframe-loader-wrapper">
+			<div class="iframe-loader" id="form-loader">
+				<div class="spinner"></div>
+				<p>Carregando...</p>
+			</div>
+			<iframe
+				src="https://docs.google.com/forms/d/e/1FAIpQLSfNv6XA-eTay_9voIBm-RPUNKuS_kk3eu3CNw49sZJ9bfq1gQ/viewform?embedded=true"
+				width="640" height="371" frameborder="0" marginheight="0" marginwidth="0"
+				onload="document.getElementById('form-loader').style.display='none'">Carregando…</iframe>
+		</div>
 	</div>
 </body>
 

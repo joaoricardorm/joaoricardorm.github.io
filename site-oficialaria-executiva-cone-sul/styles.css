@@ -20,7 +20,7 @@ body::before {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     padding: 20px;
     text-align: center;
@@ -281,12 +281,22 @@ footer {
     color: #c4161c;
 }
 
+
 iframe.list-view {
     filter: invert(1) hue-rotate(180deg);
 }
 
 /* Ajuste fino para telas muito pequenas */
 @media (max-width: 768px) {
+
+    .anonymous-notice {
+        margin: 5px;
+    }
+
+    .anonymous-notice p {
+        font-size: 80%;
+    }
+
     .buttons {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -338,6 +348,9 @@ iframe.list-view {
     h1 {
         font-size: 1.5rem;
     }
+
+
+
 }
 
 @media (max-width: 360px) {
@@ -348,6 +361,7 @@ iframe.list-view {
     .btn img {
         max-width: 100px;
     }
+
 }
 
 /* ========== PÁGINA DE FORMULÁRIO ========== */
@@ -416,7 +430,7 @@ html {
 }
 
 .form-container {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     padding: 20px;
     display: flex;
@@ -509,4 +523,78 @@ html {
     .form-header h3 {
         font-size: 0.75rem;
     }
+}
+
+/* ========== LOGO LINK E LOADING SPINNER ========== */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+.logo-link:active {
+    transform: scale(0.98);
+}
+
+.iframe-loader-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.iframe-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 14, 14, 0.9);
+    z-index: 10;
+    border-radius: 8px;
+    gap: 16px;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(196, 22, 28, 0.3);
+    border-top-color: #c4161c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.iframe-loader p {
+    margin: 0;
+    color: #888;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.iframe-loader-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    border: none;
 }

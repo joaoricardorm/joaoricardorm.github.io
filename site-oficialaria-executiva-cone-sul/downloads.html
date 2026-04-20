@@ -33,7 +33,9 @@
                 <span>←</span>
                 <span>VOLTAR</span>
             </a>
-            <img id="brasao" src="img/brasao-demolay-3d.png" alt="Brasão Demolay" />
+            <a href="index.html" class="logo-link" title="Ir para página inicial">
+                <img id="brasao" src="img/brasao-demolay-3d.png" alt="Brasão Demolay" />
+            </a>
             <div class="form-title">
                 <h1 style="margin: 10px 0 0 0;">Downloads</h1>
                 <h3>Oficialaria Executiva <span>Cone Sul</span></h3>
@@ -59,17 +61,25 @@
             </button>
         </div>
 
-        <iframe id="downloads-frame"
-            src="https://drive.google.com/embeddedfolderview?id=1uQFVOIlvqdDeXEvgteyce4qsr6fM8TrE#grid" width="100%"
-            height="600" frameborder="0"></iframe>
+        <div class="iframe-loader-wrapper">
+            <div class="iframe-loader" id="downloads-loader">
+                <div class="spinner"></div>
+                <p>Carregando...</p>
+            </div>
+            <iframe id="downloads-frame"
+                src="https://drive.google.com/embeddedfolderview?id=1WD23JczUmAOhbt5mZk1Zi-C79IGS9Txg#grid" width="100%"
+                height="600" frameborder="0"
+                onload="document.getElementById('downloads-loader').style.display='none'"></iframe>
+        </div>
 
         <script>
             var iframe = document.getElementById('downloads-frame');
             var btnList = document.getElementById('view-list');
             var btnGrid = document.getElementById('view-grid');
-            var baseUrl = 'https://drive.google.com/embeddedfolderview?id=1S8a9RU26i3phsPujJS2YnvJZfIhuGXek';
+            var baseUrl = 'https://drive.google.com/embeddedfolderview?id=1WD23JczUmAOhbt5mZk1Zi-C79IGS9Txg';
 
             function setView(view) {
+                document.getElementById('downloads-loader').style.display = 'flex';
                 iframe.src = baseUrl + '#' + view;
                 iframe.classList.toggle('list-view', view === 'list');
                 btnList.classList.toggle('active', view === 'list');
