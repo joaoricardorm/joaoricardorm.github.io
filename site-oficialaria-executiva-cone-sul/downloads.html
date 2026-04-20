@@ -23,21 +23,71 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="downloads-page">
     <div class="form-container">
         <div class="form-header">
             <a href="index.html" class="back-btn">
                 <span>←</span>
                 <span>VOLTAR</span>
             </a>
+            <img id="brasao" src="img/brasao-demolay-3d.png" alt="Brasão Demolay" />
             <div class="form-title">
                 <h1 style="margin: 10px 0 0 0;">Downloads</h1>
                 <h3>Oficialaria Executiva <span>Cone Sul</span></h3>
             </div>
         </div>
 
-        <iframe src="https://drive.google.com/embeddedfolderview?id=1uQFVOIlvqdDeXEvgteyce4qsr6fM8TrE#list" width="100%"
+        <div class="view-toggle">
+            <span>Ver por:</span>
+            <button id="view-list" class="view-btn active" type="button" title="Lista" aria-label="Visualizar em lista">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+            <button id="view-grid" class="view-btn" type="button" title="Grid" aria-label="Visualizar em grade">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="5" height="5" stroke="currentColor" stroke-width="2" rx="1" />
+                    <rect x="15" y="4" width="5" height="5" stroke="currentColor" stroke-width="2" rx="1" />
+                    <rect x="4" y="15" width="5" height="5" stroke="currentColor" stroke-width="2" rx="1" />
+                    <rect x="15" y="15" width="5" height="5" stroke="currentColor" stroke-width="2" rx="1" />
+                </svg>
+            </button>
+        </div>
+
+        <iframe id="downloads-frame"
+            src="https://drive.google.com/embeddedfolderview?id=1uQFVOIlvqdDeXEvgteyce4qsr6fM8TrE#grid" width="100%"
             height="600" frameborder="0"></iframe>
+
+        <script>
+            var iframe = document.getElementById('downloads-frame');
+            var btnList = document.getElementById('view-list');
+            var btnGrid = document.getElementById('view-grid');
+            var baseUrl = 'https://drive.google.com/embeddedfolderview?id=1S8a9RU26i3phsPujJS2YnvJZfIhuGXek';
+
+            function setView(view) {
+                iframe.src = baseUrl + '#' + view;
+                iframe.classList.toggle('list-view', view === 'list');
+                btnList.classList.toggle('active', view === 'list');
+                btnGrid.classList.toggle('active', view === 'grid');
+            }
+
+            btnList.addEventListener('click', function () { setView('list'); });
+            btnGrid.addEventListener('click', function () { setView('grid'); });
+
+            // Inicializa conforme o hash atual ou por padrão em grid.
+            var currentHash = window.location.hash.replace('#', '');
+            if (currentHash === 'list' || currentHash === 'grid') {
+                setView(currentHash);
+            } else {
+                setView('list');
+            }
+        </script>
+
+        <!-- 1uQFVOIlvqdDeXEvgteyce4qsr6fM8TrE - minha pasta do drive -->
+
+        <!-- 1S8a9RU26i3phsPujJS2YnvJZfIhuGXek - pasta correta do drive -->
     </div>
 </body>
 
