@@ -26,6 +26,19 @@ body::before {
     text-align: center;
 }
 
+#topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#brasao {
+    max-width: 150px;
+    width: 100%;
+}
+
 /* Isso inverte as cores do iframe, tornando o fundo branco em preto */
 iframe {
     filter: invert(90%) hue-rotate(180deg) brightness(1.2);
@@ -35,6 +48,7 @@ iframe {
 
 h1 {
     font-size: 2.7rem;
+    line-height: 1;
     font-family: 'Grenze Gotisch', serif;
     font-weight: 700;
 }
@@ -84,10 +98,10 @@ h1 span {
     margin-bottom: 10px;
 }
 
-/* 🔴 DUAS COLUNAS FIXAS */
+/* 🔴 TRÊS COLUNAS FIXAS */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
